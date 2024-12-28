@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>纪念母亲</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .audio-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body style="background-color: #f5f5dc;">
+    <div class="audio-controls">
+        <button id="playPauseBtn">暂停</button>
+        <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5">
+    </div>
+    
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="music/sad_background_music.mp3" type="audio/mpeg">
+        您的浏览器不支持音频元素。
+    </audio>
+    
+    <header>
+        <h1>纪念亲爱的母亲</h1>
+        <p>一生的爱与奉献 (1953-2024)</p>
+    </header>
+    
+    <div class="tabs">
+        <button class="tablink" onclick="openTab(event, 'young')">年轻时代</button>
+        <button class="tablink" onclick="openTab(event, 'hard')">勤劳的生活</button>
+        <button class="tablink" onclick="openTab(event, 'kind')">善良的性格</button>
+        <button class="tablink" onclick="openTab(event, 'happy')">幸福生活</button>
+        <button class="tablink" onclick="openTab(event, 'friends')">亲友的时光</button>
+        <button class="tablink" onclick="openTab(event, 'granddaughter')">对孙女的关爱</button>
+    </div>
+
+    <div id="young" class="tabcontent" style="display:none">
+        <div class="gallery">
+            <div class="photo">
+                <a href="image/young_mother1.jpg" target="_blank">
+                    <img src="image/young_mother1.jpg" alt="年轻的母亲1">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/young_mother2.jpg" target="_blank">
+                    <img src="image/young_mother2.jpg" alt="年轻的母亲2">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/young_mother3.jpg" target="_blank">
+                    <img src="image/young_mother3.jpg" alt="年轻的母亲3">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="hard" class="tabcontent" style="display:none">
+        <div class="gallery">
+            <div class="photo">
+                <a href="image/hard_work1.jpg" target="_blank">
+                    <img src="image/hard_work1.jpg" alt="勤劳的生活1">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/hard_work2.jpg" target="_blank">
+                    <img src="image/hard_work2.jpg" alt="勤劳的生活2">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/hard_work3.jpg" target="_blank">
+                    <img src="image/hard_work3.jpg" alt="勤劳的生活3">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="kind" class="tabcontent" style="display:none">
+        <div class="gallery">
+            <div class="photo">
+                <a href="image/kind_nature1.jpg" target="_blank">
+                    <img src="image/kind_nature1.jpg" alt="善良的性格1">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/kind_nature2.jpg" target="_blank">
+                    <img src="image/kind_nature2.jpg" alt="善良的性格2">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/kind_nature3.jpg" target="_blank">
+                    <img src="image/kind_nature3.jpg" alt="善良的性格3">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="happy" class="tabcontent" style="display:none">
+        <div class="gallery">
+            <div class="photo">
+                <a href="image/happy_life1.jpg" target="_blank">
+                    <img src="image/happy_life1.jpg" alt="幸福生活1">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/happy_life2.jpg" target="_blank">
+                    <img src="image/happy_life2.jpg" alt="幸福生活2">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/happy_life3.jpg" target="_blank">
+                    <img src="image/happy_life3.jpg" alt="幸福生活3">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="friends" class="tabcontent" style="display:none">
+        <div class="gallery">
+            <div class="photo">
+                <a href="image/friends_time1.jpg" target="_blank">
+                    <img src="image/friends_time1.jpg" alt="亲友的时光1">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/friends_time2.jpg" target="_blank">
+                    <img src="image/friends_time2.jpg" alt="亲友的时光2">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/friends_time3.jpg" target="_blank">
+                    <img src="image/friends_time3.jpg" alt="亲友的时光3">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="granddaughter" class="tabcontent" style="display:none">
+        <div class="gallery">
+            <div class="photo">
+                <a href="image/granddaughter_love1.jpg" target="_blank">
+                    <img src="image/granddaughter_love1.jpg" alt="对孙女的关爱1">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/granddaughter_love2.jpg" target="_blank">
+                    <img src="image/granddaughter_love2.jpg" alt="对孙女的关爱2">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/granddaughter_love3.jpg" target="_blank">
+                    <img src="image/granddaughter_love3.jpg" alt="对孙女的关爱3">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/granddaughter_love4.jpg" target="_blank">
+                    <img src="image/granddaughter_love4.jpg" alt="对孙女的关爱4">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/granddaughter_love5.jpg" target="_blank">
+                    <img src="image/granddaughter_love5.jpg" alt="对孙女的关爱5">
+                </a>
+            </div>
+            <div class="photo">
+                <a href="image/granddaughter_love6.jpg" target="_blank">
+                    <img src="image/granddaughter_love6.jpg" alt="对孙女的关爱6">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="message">
+        <h2>感恩与怀念</h2>
+        <p>亲爱的母亲，您的爱和教导塑造了我们的人生。您的善良、勤劳和无私奉献永远激励着我们。虽然您已离开，但您的精神将永远活在我们心中。</p>
+        <p>我们深深感谢您一生的付出，也感谢所有在母亲生命中给予关爱和支持的亲朋好友。您们的善意和关怀温暖了母亲的心，也将永远被我们铭记。</p>
+        <p>愿您在天国安息，我们会永远怀念您，继续传承您的爱与美德。</p>
+    </div>
+
+    <script>
+        // 音乐控制
+        const audio = document.getElementById('backgroundMusic');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const volumeControl = document.getElementById('volumeControl');
+
+        // 设置初始音量
+        audio.volume = 0.5; // 默认音量降低一半
+
+        // 播放/暂停按钮
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = '暂停';
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = '播放';
+            }
+        });
+
+        // 音量控制
+        volumeControl.addEventListener('input', (event) => {
+            audio.volume = event.target.value;
+        });
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";  
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";  
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html> 
